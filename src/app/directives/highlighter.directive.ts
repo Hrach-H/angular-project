@@ -1,13 +1,17 @@
-import {Directive, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {Directive, HostBinding, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appHighlighter]'
 })
-export class HighlighterDirective implements OnInit {
+export class HighlighterDirective {
+  @HostBinding('style.backgroundColor') backgroundColor = 'transparent';
 
-  constructor(private element: ElementRef, private renderer: Renderer2) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.renderer.setStyle(this.element.nativeElement, 'background-color', 'purple');
+  @HostListener('mouseenter') onMouseOver() {
+    this.backgroundColor = 'cyan';
+  }
+  @HostListener('mouseleave') onMouseLeave() {
+    this.backgroundColor = 'transparent';
   }
 }
