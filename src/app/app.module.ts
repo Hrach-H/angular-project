@@ -18,6 +18,7 @@ import { DropdownDirective } from './directives/dropdown.directive';
 
 import {ShoppingListService} from './shopping-list/shopping-list.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HighlighterDirective,
     UnlessDirective,
     DropdownDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
